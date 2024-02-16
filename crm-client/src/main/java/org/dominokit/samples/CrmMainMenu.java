@@ -8,6 +8,7 @@ import org.dominokit.domino.ui.tree.TreeItem;
 import org.dominokit.domino.ui.utils.BaseDominoElement;
 import org.dominokit.domino.ui.utils.ChildHandler;
 import org.dominokit.samples.notes.NotesPage;
+import org.dominokit.samples.weather.WeatherPage;
 
 public class CrmMainMenu extends BaseDominoElement<HTMLDivElement, CrmMainMenu> {
 
@@ -24,6 +25,9 @@ public class CrmMainMenu extends BaseDominoElement<HTMLDivElement, CrmMainMenu> 
                 .appendChild(TreeItem.<String>create(Icons.application_settings(), "CRM"))
                 .appendChild(TreeItem.<String>create(Icons.note_edit(), "Notes")
                         .addClickListener(evt -> shell.withContent((parent, content) -> content.setContent(NotesPage.create()))))
+                .appendChild(TreeItem.<String>create(Icons.weather_cloudy_alert(), "Weather")
+                        .addClickListener(evt -> shell.withContent((parent, content) -> content.setContent(WeatherPage.create()))))
+
                 .appendChild(TreeItem.<String>create(Icons.cogs(), "Settings"))
         ;
         init(this);
